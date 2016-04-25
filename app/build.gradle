@@ -18,6 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'YELP_CONSUMER_KEY', YelpConsumerKey
+        it.buildConfigField 'String', 'YELP_CONSUMER_SECRET', YelpConsumerSecret
+        it.buildConfigField 'String', 'YELP_TOKEN', YelpToken
+        it.buildConfigField 'String', 'YELP_TOKEN_SECRET', YelpTokenSecret
+    }
 }
 
 repositories {
@@ -27,6 +34,8 @@ repositories {
 
 dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.1.2'
+    compile 'se.akerfeldt:okhttp-signpost:1.1.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:3.0'
