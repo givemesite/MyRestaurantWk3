@@ -2,7 +2,7 @@
 
 #### An Android app that returns restaurants for a user-given location
 
-#### By Chris Houghton
+#### By Chris Houghton (& Kevin Mattison)
 
 ## description
 
