@@ -6,63 +6,63 @@ import java.util.ArrayList;
  * Created by Guest on 4/25/16.
  */
 public class Restaurant {
-    private String mName;
-    private String mPhone;
-    private String mWebsite;
-    private double mRating;
-    private String mImageUrl;
-    private ArrayList<String> mAddress = new ArrayList<>();
-    private double mLatitude;
-    private double mLongitude;
-    private ArrayList<String> mCategories = new ArrayList<>();
+    private String Name;
+    private String Phone;
+    private String Website;
+    private double Rating;
+    private String ImageUrl;
+    private ArrayList<String> Address = new ArrayList<>();
+    private double Latitude;
+    private double Longitude;
+    private ArrayList<String> Categories = new ArrayList<>();
 
     public Restaurant(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,
                       double latitude, double longitude, ArrayList<String> categories) {
-        this.mName = name;
-        this.mPhone = phone;
-        this.mWebsite = website;
-        this.mRating = rating;
-        this.mImageUrl = imageUrl;
-        this.mAddress = address;
-        this.mLatitude = latitude;
-        this.mLongitude = longitude;
-        this.mCategories = categories;
+        this.Name = name;
+        this.Phone = phone;
+        this.Website = website;
+        this.Rating = rating;
+        this.ImageUrl = imageUrl;
+        this.Address = address;
+        this.Latitude = latitude;
+        this.Longitude = longitude;
+        this.Categories = categories;
     }
 
     public String getName() {
-        return mName;
+        return Name;
     }
 
     public String getPhone() {
-        return mPhone;
+        return Phone;
     }
 
     public String getWebsite() {
-        return  mWebsite;
+        return Website;
     }
 
     public double getRating() {
-        return mRating;
+        return Rating;
     }
 
     public String getImageUrl(){
-        return mImageUrl;
+        return ImageUrl;
     }
 
     public ArrayList<String> getAddress() {
-        return mAddress;
+        return Address;
     }
 
     public double getLatitude() {
-        return mLatitude;
+        return Latitude;
     }
 
     public double getLongitude() {
-        return mLongitude;
+        return Longitude;
     }
 
     public ArrayList<String> getCategories() {
-        return mCategories;
+        return Categories;
     }
 }
