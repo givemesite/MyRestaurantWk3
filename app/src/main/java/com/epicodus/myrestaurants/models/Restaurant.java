@@ -1,68 +1,75 @@
 package com.epicodus.myrestaurants.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Guest on 4/25/16.
  */
+@Parcel
 public class Restaurant {
-    private String Name;
-    private String Phone;
-    private String Website;
-    private double Rating;
-    private String ImageUrl;
-    private ArrayList<String> Address = new ArrayList<>();
-    private double Latitude;
-    private double Longitude;
-    private ArrayList<String> Categories = new ArrayList<>();
+    private String name;
+    private String phone;
+    private String website;
+    private double rating;
+    private String imageUrl;
+    private ArrayList<String> address = new ArrayList<>();
+    private double latitude;
+    private double longitude;
+    private ArrayList<String> categories = new ArrayList<>();
+
+    public Restaurant() {}
 
     public Restaurant(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,
                       double latitude, double longitude, ArrayList<String> categories) {
-        this.Name = name;
-        this.Phone = phone;
-        this.Website = website;
-        this.Rating = rating;
-        this.ImageUrl = imageUrl;
-        this.Address = address;
-        this.Latitude = latitude;
-        this.Longitude = longitude;
-        this.Categories = categories;
+        this.name = name;
+        this.phone = phone;
+        this.website = website;
+        this.rating = rating;
+        this.imageUrl = imageUrl;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.categories = categories;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public String getWebsite() {
-        return Website;
+        return website;
     }
 
     public double getRating() {
-        return Rating;
+        return rating;
     }
 
     public String getImageUrl(){
-        return ImageUrl;
+        return imageUrl;
     }
 
     public ArrayList<String> getAddress() {
-        return Address;
+        return address;
     }
 
     public double getLatitude() {
-        return Latitude;
+        return latitude;
     }
 
     public double getLongitude() {
-        return Longitude;
+        return longitude;
     }
 
     public ArrayList<String> getCategories() {
-        return Categories;
+        return categories;
     }
 }
+

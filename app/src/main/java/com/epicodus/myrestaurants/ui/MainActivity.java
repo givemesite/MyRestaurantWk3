@@ -23,16 +23,17 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
+    public static final String TAG = MainActivity.class.getSimpleName();
     private Firebase mSearchedLocationRef;
     private ValueEventListener mSearchedLocationRefListener;
 
-    //    public static final String TAG = MainActivity.class.getSimpleName();
-    @Bind(R.id.findRestaurantsButton)
-    Button mFindRestaurantsButton;
-    @Bind(R.id.locationEditText)
-    EditText mLocationEditText;
+
+//    private SharedPreferences mSharedPreferences;
+//    private SharedPreferences.Editor mEditor;
+
+
+    @Bind(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
+    @Bind(R.id.locationEditText) EditText mLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 //        mEditor = mSharedPreferences.edit();
+
         mFindRestaurantsButton.setOnClickListener(this);
         mSearchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
     }
 
     @Override
@@ -69,24 +72,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == mFindRestaurantsButton) {
             String location = mLocationEditText.getText().toString();
+            // if(!(location).equals("")) {
+            //   addToSharedPreferences(location);
+            // }
             saveLocationToFirebase(location);
-
-//            if(!(location).equals("")) {
-//                addToSharedPreferences(location);
-//            }
-//            Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
-//            startActivity(intent);
-//        }
+            Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
+            intent.putExtra("location", location);
+            startActivity(intent);
         }
     }
+
+    // private void addToSharedPreferences(String location) {
+    //    mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
+    //  }
 
     public void saveLocationToFirebase(String location) {
         Firebase searchedLocationRef = new Firebase(Constants.FIREBASE_URL_SEARCHED_LOCATION);
         searchedLocationRef.push().setValue(location);
-
-
-//    private void addToSharedPreferences(String location) {
-//        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
-//    }
     }
 }
