@@ -2,7 +2,7 @@
 
 #### An Android app that returns restaurants for a user-given location
 
-#### By Chris Houghton (& Kevin Mattison)
+#### By Chris Houghton & Trevor Elvey
 
 ## description
 
@@ -25,4 +25,4 @@ MyRestaurants is a progressive project in the Epicodus Android course designed a
 
 Licensed under the GPL.
 
-Copyright (c) 2016 **Chris Houghton**
+Copyright (c) 2016 **Chris Houghton & Trevor Elvey**
